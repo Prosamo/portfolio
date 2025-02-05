@@ -1,0 +1,257 @@
+@media (min-width: 769px) {
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #000; /* 黒い背景 */
+        color: #fff; /* 白いテキスト */
+    }
+
+    header {
+        text-align: center;
+        padding: 1rem 0;
+        background: #333;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .split-image {
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 のアスペクト比の場合。必要に応じて変更 */
+        background: #333; /* 最初は真っ黒に設定 */
+        animation: reveal-center 0.3s ease-in-out forwards;
+        animation-delay: 1s; /* アニメーションの開始を1秒遅らせる */
+    }
+
+    .split-image.animate {
+        background: url('header.png') center/cover no-repeat;
+    }
+
+    @keyframes reveal-center {
+        from { 
+            clip-path: inset(50% 0% 50% 0%); 
+        } 
+        to { 
+            clip-path: inset(0% 0% 0% 0%); 
+        }
+    }
+
+    .scroll-element {
+        opacity: 0;
+        transform: translateY(100px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-element.scrolled {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    section {
+        padding: 2rem;
+        margin: 1rem 0;
+        background: #222; /* 少し明るい背景 */
+        color: #fff;
+    }
+
+    .screen {
+        background-image: url('holobg.png');
+        background-size: cover;
+        width: 100%;
+        max-width: 500px;
+        height: 100%;
+        display: block;
+        margin: 0 auto;
+        color: #fff;
+        text-shadow: 
+            0.5px 0.5px 1px #00b0f0,
+            -0.5px -0.5px 1px #00b0f0,
+            0.5px -0.5px 1px #00b0f0,
+            -0.5px 0.5px 1px #00b0f0;
+    }
+    .project{
+        text-align: center;
+    }
+    .project img {
+        width: 49%;
+        height: auto;
+        display: inline-block;
+        max-width: 500px;
+        margin: 0px;
+    }
+    .project .screen {
+        width: 49%;
+        height: auto;
+        display: inline-block;
+        margin: 0px;
+        text-align: left;
+    }
+
+    .holoframeS {
+        width: 49%;
+        height: auto;
+        background-image: url('holoframeS.png');
+        background-size: cover;
+        margin: 0px;
+        display: inline-block;
+    }
+    .holoframeM {
+        width: 100%;
+        height: auto;
+        background-image: url('holoframeM.png');
+        background-size: cover;
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem 0;
+        background: #333;
+        color: #fff;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #000; /* 黒い背景 */
+        color: #fff; /* 白いテキスト */
+    }
+
+    header {
+        text-align: center;
+        padding: 1rem 0;
+        background: #333;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .split-image {
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 のアスペクト比の場合。必要に応じて変更 */
+        background: #333; /* 最初は真っ黒に設定 */
+        animation: reveal-center 0.3s ease-in-out forwards;
+        animation-delay: 1s; /* アニメーションの開始を1秒遅らせる */
+    }
+
+    .split-image.animate {
+        background: url('header.png') center/cover no-repeat;
+    }
+
+    @keyframes reveal-center {
+        from { 
+            clip-path: inset(50% 0% 50% 0%); 
+        } 
+        to { 
+            clip-path: inset(0% 0% 0% 0%); 
+        }
+    }
+
+    .scroll-element {
+        opacity: 0;
+        transform: translateY(100px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-element.scrolled {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    section {
+        padding: 2rem;
+        margin: 1rem 0;
+        background: #222; /* 少し明るい背景 */
+        color: #fff;
+    }
+
+    .screen {
+        background-image: url('holobg.png');
+        background-size: cover;
+        width: 100%;
+        max-width: 500px;
+        height: 100%;
+        display: block;
+        margin: 0 auto;
+        color: #fff;
+        text-shadow: 
+            0.5px 0.5px 1px #00b0f0,
+            -0.5px -0.5px 1px #00b0f0,
+            0.5px -0.5px 1px #00b0f0,
+            -0.5px 0.5px 1px #00b0f0;
+    }
+
+    .project{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .project img {
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        max-width: 500px;
+        margin: 0px;
+    }
+    .project .screen {
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        margin: 0px;
+        text-align: left;
+    }
+
+    .holoframeS {
+        width: 49%;
+        height: auto;
+        background-image: url('holoframeS.png');
+        background-size: cover;
+        margin: 0px;
+        display: inline-block;
+    }
+    .holoframeM {
+        width: 100%;
+        height: auto;
+        background-image: url('holoframeM.png');
+        background-size: cover;
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem 0;
+        background: #333;
+        color: #fff;
+    }
+}

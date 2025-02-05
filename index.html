@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <header>
+        <div class="split-image"></div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#accounts">My Accounts</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="about" class="scroll-element">
+        <h2>About Me</h2>
+        <img src="aboutme.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
+    </section>
+    <section id="projects" class="scroll-element">
+        <h2>Projects</h2>
+        <div class="scroll-element project">
+            <a href="https://prosamo.github.io/tank-game"><img src="tank.png"></a>
+            <div class="screen">　pygameで作ったシンプルなゲームです。シューティングゲームに方向を導入することで、簡単に組める範疇でも、ある程度のゲーム性を追求しました。また、弾を5発消費すると、ビームを撃てるようにしてあるのですが、こちらはゲーム性の向上だけでなく、画面を揺らす演出などのこだわりポイントがあります。画像を押すとゲームのリンクに飛べるので、ぜひプレイしてみてください。（スマートフォンでのプレイをお勧めします）<br>追記:Xでの共有機能について、スマートフォンからではXでのログインが上手くいかない点が課題です。（PCからは動作します）</div>
+        </div>
+        <div class="scroll-element project">
+            <a href="https://prosamo.github.io/wind_typing"><img src="typing.png"></a>
+            <div class="screen">　pygameで作ったタイピングゲームです。後ほど紹介しますが、タイピングゲームの処理部分を全て行うモジュールを自作したので、処理は全て流用です。このゲームは、自分でお題を決めてタイピングゲームがしたいという単純な目的で作ったものです。ただし、公開にあたって何かしらの差別化をしたいと考えたので、「瞬間のタイピング速度」という概念を導入しました。強風というコンセプトに上手く落とし込む都合上、直接この数値をリザルトには表示していませんが、最大瞬間風速というのが、「瞬間のタイピング速度」の2倍の値に設定してあります。こちらもぜひプレイして確かめて下さい。</div>
+        </div>   
+        <div class="scroll-element project">
+            <a href="https://qiita.com/Prosamo/items/de12a90ba026b7517d2a"><img src="pygbag.png"></a>
+            <div class="screen">　上記のゲームは、pygbagというモジュールを使って公開したものです。海外の人が作ったものなので、日本ではあまり知名度がありません。そのため、使い方のガイドも全て英語の文献を読みました。その過程をまとめ、おそらく日本初のpygbagの使い方を解説した記事が、この画像のものになります。</div>
+        </div>        <div class="scroll-element project">
+            <a href="https://pypi.org/project/typehandler"><img src="typehandler.png"></a>
+            <div class="screen">　タイピングゲーム簡単に実装するためのPythonモジュールです。日本語、英数字、記号に対応しています。2025年中にDL数10000を目指し、アップデートと宣伝を続けています。機能を追加していく上で、自分向けのツールとは違った点を意識する機会となりました。以前までのバージョンと互換性を持たせるため、メソッドの変更で安易に引数を変更しないようにしたり、処理の部分をプライベートメソッドとし、エラーハンドリングを付けたものをユーザーに提供する工夫をしました。
+            </div>
+        </div>    
+        </section>
+    <section id="accounts" class="scroll-element">
+        <h2>My Accounts</h2>
+        <a href="https://qiita.com/Prosamo"><img src="qiita.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></a>
+        <a href="https://github.com/Prosamo"><img src="github.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></a>
+        <a href="https://x.com/prosamo314"><img src="x.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></a>
+    </section>
+    <footer>
+        <p>&copy; 2025 Prosamo. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        setTimeout(() => {
+            document.querySelector('.split-image').classList.add('animate');
+        }, 1000); /* 1秒後にクラスを追加 */
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var scrollElements = document.querySelectorAll(".scroll-element");
+            var elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (
+                    elementTop <= 
+                    (window.innerHeight || document.documentElement.clientHeight) / dividend
+                );
+            };
+            var displayScrollElement = (element) => {
+                element.classList.add("scrolled");
+            };
+            var handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
+                    }
+                });
+            };
+            window.addEventListener("scroll", () => {
+                handleScrollAnimation();
+            });
+        });
+    </script>
+</body>
+</html>
