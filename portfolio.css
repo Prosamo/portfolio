@@ -124,6 +124,89 @@
         background: #333;
         color: #fff;
     }
+
+    .Display {
+        padding: 10px;
+        width: 100%;
+        font-size:32px;
+        color:#11dfdf;
+        text-shadow: 
+        0.5px 0.5px 1px #00b0f0,
+        -0.5px -0.5px 1px #00b0f0,
+        0.5px -0.5px 1px #00b0f0,
+        -0.5px 0.5px 1px #00b0f0;
+    }
+
+    .match {
+        color: #11dfdf;
+        text-shadow: 
+        0.5px 0.5px 1px #00b0f0,
+        -0.5px -0.5px 1px #00b0f0,
+        0.5px -0.5px 1px #00b0f0,
+        -0.5px 0.5px 1px #00b0f0;
+    }
+    .mismatch {
+        color: #008888;
+        text-shadow: 
+        0.5px 0.5px 1px #0080c0,
+        -0.5px -0.5px 1px #0080c0,
+        0.5px -0.5px 1px #0080c0,
+        -0.5px 0.5px 1px #0080c0;
+    }
+    .keyboard {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .key-row {
+        display: flex;
+        gap: 5px;
+    }
+    .key {
+        width: 7%; /* キーの幅を固定 */
+        height: 80px; /* キーの高さを自動調整 */
+        border-right: 1px solid #11dfdf;
+        border-bottom: 1px solid #11dfdf;
+        box-shadow: #00b0f0 1px 1px 1px;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #11dfdf;
+
+    }
+    .space {
+        width: 32%; /* Spaceキーの幅を固定 */
+    }
+    .shift {
+        width: 7%; /* Shiftキーの幅を固定 */
+    }
+    .key-row:nth-child(1) {
+        margin-left: 0%; /* 1行目を右にずらす */
+    }
+    .key-row:nth-child(2) {
+        margin-left: 2ch; /* 2行目を右にずらす */
+    }
+    .key-row:nth-child(3) {
+        margin-left: 4%; /* 3行目右にずらす */
+    }
+    .key-row:nth-child(4) {
+        margin-left: 0%; /* 4はシフトキーがあるのでずらさない*/
+    }
+    .key-row:nth-child(5) {
+        margin-left: 32%; /* スペースの位置を調整*/
+    }
+
+    .highlight {
+        background-color: #88ffff; /* 背景色を水色に設定 */
+        color: #ffffff; /* 文字色を白に設定 */
+    }
+    .missHighlight {
+        background-color: #ff8888; /* 背景色を赤色に設定 */
+        color: #ffffff; /* 文字色を白に設定 */
+    }
 }
 
 @media (max-width: 768px) {
@@ -253,5 +336,88 @@
         padding: 1rem 0;
         background: #333;
         color: #fff;
+    }
+
+    .Display {
+        padding: 10px;
+        width: 100%;
+        font-size:12px;
+        color:#11dfdf;
+        text-shadow: 
+        0.5px 0.5px 1px #00b0f0,
+        -0.5px -0.5px 1px #00b0f0,
+        0.5px -0.5px 1px #00b0f0,
+        -0.5px 0.5px 1px #00b0f0;
+    }
+
+    .match {
+        color: #11dfdf;
+        text-shadow: 
+        0.5px 0.5px 1px #00b0f0,
+        -0.5px -0.5px 1px #00b0f0,
+        0.5px -0.5px 1px #00b0f0,
+        -0.5px 0.5px 1px #00b0f0;
+    }
+    .mismatch {
+        color: #008888;
+        text-shadow: 
+        0.5px 0.5px 1px #0080c0,
+        -0.5px -0.5px 1px #0080c0,
+        0.5px -0.5px 1px #0080c0,
+        -0.5px 0.5px 1px #0080c0;
+    }
+    .keyboard {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .key-row {
+        display: flex;
+        gap: 5px;
+    }
+    .key {
+        width: 7%; /* キーの幅を固定 */
+        height: 20px; /* キーの高さを自動調整 */
+        border-right: 1px solid #11dfdf;
+        border-bottom: 1px solid #11dfdf;
+        box-shadow: #00b0f0 1px 1px 1px;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #11dfdf;
+
+    }
+    .space {
+        width: 32%; /* Spaceキーの幅を固定 */
+    }
+    .shift {
+        width: 7%; /* Shiftキーの幅を固定 */
+    }
+    .key-row:nth-child(1) {
+        margin-left: 0%; /* 1行目を右にずらす */
+    }
+    .key-row:nth-child(2) {
+        margin-left: 1%; /* 2行目を右にずらす */
+    }
+    .key-row:nth-child(3) {
+        margin-left: 2%; /* 3行目右にずらす */
+    }
+    .key-row:nth-child(4) {
+        margin-left: 0%; /* 4はシフトキーがあるのでずらさない*/
+    }
+    .key-row:nth-child(5) {
+        margin-left: 38%; /* スペースの位置を調整*/
+    }
+
+    .highlight {
+        background-color: #88ffff; /* 背景色を水色に設定 */
+        color: #ffffff; /* 文字色を白に設定 */
+    }
+    .missHighlight {
+        background-color: #ff8888; /* 背景色を赤色に設定 */
+        color: #ffffff; /* 文字色を白に設定 */
     }
 }

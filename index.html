@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <script src="typehandler.js" defer></script>
+    <script src="keyboard.js" defer></script>
     <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
@@ -20,12 +22,18 @@
     <section id="about" class="scroll-element">
         <h2>About Me</h2>
         <img src="aboutme.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
+        <div style="margin-top:30px; margin:0, auto; background-image: url('holobg.png'); background-size: cover;">
+            <div class="Display" id="inputDisplay" style="color:#008888; text-shadow: 0.5px 0.5px 1px #0080c0,-0.5px -0.5px 1px #0080c0,0.5px -0.5px 1px #0080c0,-0.5px 0.5px 1px #0080c0;"></div>
+            <div class="Display" id="sentenceDisplay"></div>
+            <div class="keyboard" id="keyboard" style="margin-top: 20px;"></div>
+        </div>
+        
     </section>
     <section id="projects" class="scroll-element">
         <h2>Projects</h2>
         <div class="scroll-element project">
             <a href="https://prosamo.github.io/tank-game"><img src="tank.png"></a>
-            <div class="screen">　pygameで作ったシンプルなゲームです。シューティングゲームに方向を導入することで、簡単に組める範疇でも、ある程度のゲーム性を追求しました。また、弾を5発消費すると、ビームを撃てるようにしてあるのですが、こちらはゲーム性の向上だけでなく、画面を揺らす演出などのこだわりポイントがあります。画像を押すとゲームのリンクに飛べるので、ぜひプレイしてみてください。（スマートフォンでのプレイをお勧めします）<br>追記:Xでの共有機能について、スマートフォンからではXでのログインが上手くいかない点が課題です。（PCからは動作します）</div>
+            <div class="screen">　pygameで作ったシンプルなゲームです。シューティングゲームに方向を導入することで、簡単に組める範疇でも、ある程度のゲーム性を追求しました。また、弾を5発消費すると、ビームを撃てるようにしてあるのですが、こちらはゲーム性の向上だけでなく、画面を揺らす演出などのこだわりポイントがあります。画像を押すとゲームのリンクに飛べるので、ぜひプレイしてみてください。（スマートフォンでのプレイをお勧めします）</div>
         </div>
         <div class="scroll-element project">
             <a href="https://prosamo.github.io/wind_typing"><img src="typing.png"></a>
@@ -36,7 +44,7 @@
             <div class="screen">　上記のゲームは、pygbagというモジュールを使って公開したものです。海外の人が作ったものなので、日本ではあまり知名度がありません。そのため、使い方のガイドも全て英語の文献を読みました。その過程をまとめ、おそらく日本初のpygbagの使い方を解説した記事が、この画像のものになります。</div>
         </div>        <div class="scroll-element project">
             <a href="https://pypi.org/project/typehandler"><img src="typehandler.png"></a>
-            <div class="screen">　タイピングゲームを簡単に実装するためのPythonモジュールです。日本語、英数字、記号に対応しています。2025年中にDL数10000を目指し、アップデートと宣伝を続けています。機能を追加していく上で、自分向けのツールとは違った点を意識する機会となりました。以前までのバージョンと互換性を持たせるため、メソッドの変更で安易に引数を変更しないようにしたり、処理の部分をプライベートメソッドとし、エラーハンドリングを付けたものをユーザーに提供する工夫をしました。
+            <div class="screen">　タイピングゲーム簡単に実装するためのPythonモジュールです。日本語、英数字、記号に対応しています。2025年中にDL数10000を目指し、アップデートと宣伝を続けています。機能を追加していく上で、自分向けのツールとは違った点を意識する機会となりました。以前までのバージョンと互換性を持たせるため、メソッドの変更で安易に引数を変更しないようにしたり、処理の部分をプライベートメソッドとし、エラーハンドリングを付けたものをユーザーに提供する工夫をしました。
             </div>
         </div>    
         </section>
@@ -76,6 +84,125 @@
             };
             window.addEventListener("scroll", () => {
                 handleScrollAnimation();
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            words = {
+                'ポートフォリオをご覧いただきありがとうございます':'ぽーとふぉりおをごらんいただきありがとうございます',
+                'ただ見るだけではワクワクしないと思うので':'ただみるだけではわくわくしないとおもうので',
+                'タイピングゲームを用意いたしました':'たいぴんぐげーむをよういいたしました',
+                '私はPythonをメインに学習していますが':'わたしはPythonをめいんにがくしゅうしていますが',
+                'ポートフォリオに埋め込むため、JavaScriptで実装しました':'ぽーとふぉりおにうめこむため,JavaScriptでじっそうしました',
+                'タイピングゲームは、私がよく扱うテーマです':'たいぴんぐげーむは,わたしがよくあつかうてーまです',
+                '寿司打というゲームで１位を取ったことがきっかけで':'すしだというげーむで1いをとったことがきっかけで',
+                'タイピングゲームを作るための自作のモジュールをPyPIで公開したため':'たいぴんぐげーむをつくるためのじさくのもじゅーるをPyPIでこうかいしたため',
+                'その宣伝のために、さらにタイピングゲームを作ることが増えました':'そのせんでんのために,さらにたいぴんぐげーむをつくることがふえました',
+                'タイピングゲームに限らず、ゲームはよく扱っています':'たいぴんぐげーむにかぎらず,げーむはよくあつかっています',
+                'リンクを貼ってあるので':'りんくをはってあるので',
+                '詳しくはこのページのProjectsをご覧ください':'くわしくはこのぺーじのProjectsをごらんください'
+            };
+            const process = new Process(words);
+            const keyboardElement = document.getElementById('keyboard');
+            const keyboard = new Keyboard(keyboardElement);
+            
+            const inputDisplay = document.getElementById('inputDisplay');
+            const sentenceDisplay = document.getElementById('sentenceDisplay');
+            process.updateShowRoman();
+            inputDisplay.textContent = process.showRoman;
+            sentenceDisplay.textContent = process.sentence;
+
+            document.addEventListener('keydown', (event) => {
+                event.preventDefault();
+                keyboard.shiftFixed = false;
+                const key = event.key;
+                const shift = event.shiftKey;
+
+                keyboard.updateKeyboard(shift);
+                const result = process.main(key, keyboard.isShiftActive);
+
+                if (result || key === 'Shift') {
+                    keyboard.highlightKey(key);
+                } else {
+                    keyboard.missHighlightKey(key);
+                };
+
+                process.updateShowRoman();
+                sentenceDisplay.textContent = process.sentence;
+                
+                //進行度が分かるように色分けして表示
+                const roman = process.showRoman;
+                const input = process.input;
+
+                let resultHTML = '';
+
+                const minLength = Math.min(roman.length, input.length);
+                let match = true;
+
+                for (let i = 0; i < minLength; i++) {
+                    if (roman[i] === input[i] && match) {
+                        resultHTML += `<span class="match">${roman[i]}</span>`;
+                    } else {
+                        match = false;
+                        resultHTML += `<span class="mismatch">${roman[i]}</span>`;
+                    }
+                }
+
+                // 文字列1が文字列2よりも長い場合、残りの文字を追加
+                if (roman.length > minLength) {
+                    resultHTML += `<span class="mismatch">${roman.slice(minLength)}</span>`;
+                }
+
+                inputDisplay.innerHTML = resultHTML;
+            });
+            document.addEventListener('keyup', (event) => {
+                const shift = event.shiftKey;
+                if (shift){
+                    keyboard.updateKeyboard(true);
+                } else{
+                    keyboard.updateKeyboard(false);
+                };
+            });
+
+            // カスタムイベントを受け取る
+            document.addEventListener('keyPressed', (event) => {
+                const key = event.detail;
+                const result = process.main(key, keyboard.isShiftActive);
+
+                if (result || key === 'Shift') {
+                    keyboard.highlightKey(key);
+                } else {
+                    keyboard.missHighlightKey(key);
+                };
+
+                process.updateShowRoman();
+                sentenceDisplay.textContent = process.sentence;
+
+                //進行度が分かるように色分けして表示
+                const roman = process.showRoman;
+                const input = process.input;
+
+                let resultHTML = '';
+
+                const minLength = Math.min(roman.length, input.length);
+                let match = true;
+
+                for (let i = 0; i < minLength; i++) {
+                    if (roman[i] === input[i] && match) {
+                        resultHTML += `<span class="match">${roman[i]}</span>`;
+                    } else {
+                        match = false;
+                        resultHTML += `<span class="mismatch">${roman[i]}</span>`;
+                    }
+                }
+
+                // 文字列1が文字列2よりも長い場合、残りの文字を追加
+                if (roman.length > minLength) {
+                    resultHTML += `<span class="mismatch">${roman.slice(minLength)}</span>`;
+                }
+
+                inputDisplay.innerHTML = resultHTML;
             });
         });
     </script>
