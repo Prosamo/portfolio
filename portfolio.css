@@ -377,7 +377,7 @@
     }
     .key {
         width: 7%; /* キーの幅を固定 */
-        height: 20px; /* キーの高さを自動調整 */
+        height: 40px; /* キーの高さを自動調整 */
         border-right: 1px solid #11dfdf;
         border-bottom: 1px solid #11dfdf;
         box-shadow: #00b0f0 1px 1px 1px;
@@ -419,5 +419,11 @@
     .missHighlight {
         background-color: #ff8888; /* 背景色を赤色に設定 */
         color: #ffffff; /* 文字色を白に設定 */
+    }
+}
+
+@media (max-width: 414px){
+    .key{
+        height:20px;
     }
 }
