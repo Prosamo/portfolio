@@ -388,7 +388,6 @@
         align-items: center;
         justify-content: center;
         color: #11dfdf;
-
     }
     .space {
         width: 32%; /* Spaceキーの幅を固定 */
@@ -425,5 +424,6 @@
 @media (max-width: 414px){
     .key{
         height:20px;
+        font-size:10px;
     }
 }
