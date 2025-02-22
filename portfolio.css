@@ -414,11 +414,11 @@
     }
 
     .highlight {
-        background-color: #88ffffbb; /* 背景色を水色に設定 */
+        background-color: #88ffffd0; /* 背景色を水色に設定 */
         color: #ffffff; /* 文字色を白に設定 */
     }
     .missHighlight {
-        background-color: #ff888888; /* 背景色を赤色に設定 */
+        background-color: #ff888880; /* 背景色を赤色に設定 */
         color: #ffffff; /* 文字色を白に設定 */
     }
 }
