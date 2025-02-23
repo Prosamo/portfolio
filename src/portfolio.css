@@ -1,10 +1,13 @@
+html {
+    background-color: #000000;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color:#ffffff;
-    background-color: #000000;
     background: radial-gradient(ellipse at center, #162746, 66%, #000000);
     background-size: cover;
     background-attachment: fixed;
