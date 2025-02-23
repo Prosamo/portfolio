@@ -47,7 +47,7 @@ h2 {
 .split-image {
     width: 100%;
     padding-top: 56.25%; /* 16:9 のアスペクト比の場合。必要に応じて変更 */
-    background: #000; /* 最初は真っ黒に設定 */
+    background: #00000000; /* 最初は真っ黒に設定 */
     animation: reveal-center 0.3s ease-in-out forwards;
     animation-delay: 1s; /* アニメーションの開始を1秒遅らせる */
 }
