@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <script src="typehandler.js" defer></script>
-    <script src="keyboard.js" defer></script>
-    <link rel="stylesheet" href="portfolio.css">
+    <title>Prosamo's Portfolio</title>
+    <script src="./src/typehandler.js" defer></script>
+    <script src="./src/keyboard.js" defer></script>
+    <link rel="stylesheet" href="./src/portfolio.css">
 </head>
 <body>
     <header>
@@ -21,8 +21,8 @@
     </header>
     <section id="about" class="scroll-element">
         <h2>About Me</h2>
-        <img src="aboutme.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
-        <div style="margin-top:30px; margin:0, auto; background-image: url('holobg.png'); background-size: cover;">
+        <img src="./img/aboutme.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
+        <div style="margin-top:30px; margin:0, auto; background: none;">
             <div class="Display" id="inputDisplay" style="color:#008888; text-shadow: 0.5px 0.5px 1px #0080c0,-0.5px -0.5px 1px #0080c0,0.5px -0.5px 1px #0080c0,-0.5px 0.5px 1px #0080c0;"></div>
             <div class="Display" id="sentenceDisplay"></div>
             <div class="keyboard" id="keyboard" style="margin-top: 20px;"></div>
@@ -32,27 +32,27 @@
     <section id="projects" class="scroll-element">
         <h2>Projects</h2>
         <div class="scroll-element project">
-            <a href="https://prosamo.github.io/tank-game"><img src="tank.png"></a>
+            <a href="https://prosamo.github.io/tank-game"><img src="./img/tank.png"></a>
             <div class="screen">　pygameで作ったシンプルなゲームです。シューティングゲームに方向を導入することで、簡単に組める範疇でも、ある程度のゲーム性を追求しました。また、弾を5発消費すると、ビームを撃てるようにしてあるのですが、こちらはゲーム性の向上だけでなく、画面を揺らす演出などのこだわりポイントがあります。画像を押すとゲームのリンクに飛べるので、ぜひプレイしてみてください。（スマートフォンでのプレイをお勧めします）</div>
         </div>
         <div class="scroll-element project">
-            <a href="https://prosamo.github.io/wind_typing"><img src="typing.png"></a>
+            <a href="https://prosamo.github.io/wind_typing"><img src="./img/typing.png"></a>
             <div class="screen">　pygameで作ったタイピングゲームです。後ほど紹介しますが、タイピングゲームの処理部分を全て行うモジュールを自作したので、処理は全て流用です。このゲームは、自分でお題を決めてタイピングゲームがしたいという単純な目的で作ったものです。ただし、公開にあたって何かしらの差別化をしたいと考え、「瞬間のタイピング速度」という概念を導入しました。強風というコンセプトに上手く落とし込む都合上、直接この数値をリザルトには表示していませんが、最大瞬間風速というのが、「瞬間のタイピング速度」の2倍の値に設定してあります。こちらもぜひプレイして確かめて下さい。</div>
         </div>   
         <div class="scroll-element project">
-            <a href="https://qiita.com/Prosamo/items/de12a90ba026b7517d2a"><img src="pygbag.png"></a>
+            <a href="https://qiita.com/Prosamo/items/de12a90ba026b7517d2a"><img src="./img/pygbag.png"></a>
             <div class="screen">　上記のゲームは、pygbagというモジュールを使って公開したものです。海外の人が作ったものなので、日本ではあまり知名度がありません。そのため、使い方のガイドも全て英語の文献を読みました。その過程をまとめ、おそらく日本初のpygbagの使い方を解説した記事が、この画像のものになります。</div>
         </div>        <div class="scroll-element project">
-            <a href="https://pypi.org/project/typehandler"><img src="typehandler.png"></a>
+            <a href="https://pypi.org/project/typehandler"><img src="./img/typehandler.png"></a>
             <div class="screen">　タイピングゲーム簡単に実装するためのPythonモジュールです。日本語、英数字、記号に対応しています。2025年中にDL数10000を目指し、アップデートと宣伝を続けています。機能を追加していく上で、自分向けのツールとは違った点を意識する機会となりました。以前までのバージョンと互換性を持たせるため、メソッドの変更で安易に引数を変更しないようにしたり、処理の部分をプライベートメソッドとし、エラーハンドリングを付けたものをユーザーに提供する工夫をしました。
             </div>
         </div>    
         </section>
     <section id="accounts" class="scroll-element">
         <h2>My Accounts</h2>
-        <a href="https://qiita.com/Prosamo"><img src="qiita.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></a>
-        <a href="https://github.com/Prosamo"><img src="github.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></a>
-        <a href="https://x.com/prosamo314"><img src="x.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></a>
+        <a href="https://qiita.com/Prosamo"><img src="./img/qiita.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></a>
+        <a href="https://github.com/Prosamo"><img src="./img/github.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></a>
+        <a href="https://x.com/prosamo314"><img src="./img/x.png" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></a>
     </section>
     <footer>
         <p>&copy; 2025 Prosamo. All rights reserved.</p>
@@ -94,11 +94,11 @@
                 'ただ見るだけではワクワクしないと思うので':'ただみるだけではわくわくしないとおもうので',
                 'タイピングゲームを用意いたしました':'たいぴんぐげーむをよういいたしました',
                 '私はPythonをメインに学習していますが':'わたしはPythonをめいんにがくしゅうしていますが',
-                'ポートフォリオに埋め込むため、JavaScriptで実装しました':'ぽーとふぉりおにうめこむため,JavaScriptでじっそうしました',
+                'ポートフォリオに埋め込むため、JavaScriptで実装してみました':'ぽーとふぉりおにうめこむため,JavaScriptでじっそうしてみました',
                 'タイピングゲームは、私がよく扱うテーマです':'たいぴんぐげーむは,わたしがよくあつかうてーまです',
                 '寿司打というゲームで１位を取ったことがきっかけで':'すしだというげーむで1いをとったことがきっかけで',
-                'タイピングゲームを作るための自作のモジュールをPyPIで公開したため':'たいぴんぐげーむをつくるためのじさくのもじゅーるをPyPIでこうかいしたため',
-                'その宣伝のために、さらにタイピングゲームを作ることが増えました':'そのせんでんのために,さらにたいぴんぐげーむをつくることがふえました',
+                'タイピングゲーム開発用のモジュールをPyPIで公開したため':'たいぴんぐげーむかいはつようのもじゅーるをPyPIでこうかいしたため',
+                'その宣伝のために、タイピングゲームを作ることが増えました':'そのせんでんのために,たいぴんぐげーむをつくることがふえました',
                 'タイピングゲームに限らず、ゲームはよく扱っています':'たいぴんぐげーむにかぎらず,げーむはよくあつかっています',
                 'リンクを貼ってあるので':'りんくをはってあるので',
                 '詳しくはこのページのProjectsをご覧ください':'くわしくはこのぺーじのProjectsをごらんください'

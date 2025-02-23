@@ -1,0 +1,327 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color:#ffffff;
+    background-color: #000000;
+    background: radial-gradient(ellipse at center, #162746, 66%, #000000);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 1rem 0;
+    overflow: hidden;
+    position: relative;
+    color:#ffffff;
+    text-shadow: 
+        0.5px 0.5px 1px #00b0f0,
+        -0.5px -0.5px 1px #00b0f0,
+        0.5px -0.5px 1px #00b0f0,
+        -0.5px 0.5px 1px #00b0f0;
+        background: radial-gradient(ellipse at center, #11dfdf60, 20%, #00000000);
+}
+
+h2 {
+    background-image: url('../img/holocaption.png');
+    padding-top: 28px;
+    padding-left: 90px;
+    width: 300px;
+    height: 60px;
+    background-size: cover;
+    color:#ffffff;
+    text-shadow: 
+        0.5px 0.5px 1px #00b0f0,
+        -0.5px -0.5px 1px #00b0f0,
+        0.5px -0.5px 1px #00b0f0,
+        -0.5px 0.5px 1px #00b0f0;
+}
+
+.split-image {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 のアスペクト比の場合。必要に応じて変更 */
+    background: #000; /* 最初は真っ黒に設定 */
+    animation: reveal-center 0.3s ease-in-out forwards;
+    animation-delay: 1s; /* アニメーションの開始を1秒遅らせる */
+}
+
+.split-image.animate {
+    background: url('../img/header.png') center/cover no-repeat;
+}
+
+@keyframes reveal-center {
+    from { 
+        clip-path: inset(50% 0% 50% 0%); 
+    } 
+    to { 
+        clip-path: inset(0% 0% 0% 0%); 
+    }
+}
+
+.scroll-element {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-element.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 2rem;
+    margin: 1rem 0;
+    color: #fff;
+}
+
+.screen {
+    background-color:#11dfdf10;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    color: #fff;
+    text-shadow: 
+        0.5px 0.5px 1px #00b0f0,
+        -0.5px -0.5px 1px #00b0f0,
+        0.5px -0.5px 1px #00b0f0,
+        -0.5px 0.5px 1px #00b0f0;
+}
+.project{
+    text-align: center;
+}
+.project img {
+    width: 49%;
+    height: auto;
+    display: inline-block;
+    max-width: 500px;
+    margin: 0px;
+}
+.project .screen {
+    width: 49%;
+    height: auto;
+    display: inline-block;
+    margin: 0px;
+    text-align: left;
+}
+
+.holoframeS {
+    width: 49%;
+    height: auto;
+    background-image: url('../img/holoframeS.png');
+    background-size: cover;
+    margin: 0px;
+    display: inline-block;
+}
+.holoframeM {
+    width: 100%;
+    height: auto;
+    background-image: url('../img/holoframeM.png');
+    background-size: cover;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    color:#ffffff;
+    text-shadow: 
+        0.5px 0.5px 1px #00b0f0,
+        -0.5px -0.5px 1px #00b0f0,
+        0.5px -0.5px 1px #00b0f0,
+        -0.5px 0.5px 1px #00b0f0;
+}
+
+.Display {
+    padding: 10px;
+    width: 100%;
+    font-size:32px;
+    color:#11dfdf;
+    text-shadow: 
+    0.5px 0.5px 1px #00b0f0,
+    -0.5px -0.5px 1px #00b0f0,
+    0.5px -0.5px 1px #00b0f0,
+    -0.5px 0.5px 1px #00b0f0;
+}
+
+.match {
+    color: #11dfdf;
+    text-shadow: 
+    0.5px 0.5px 1px #00b0f0,
+    -0.5px -0.5px 1px #00b0f0,
+    0.5px -0.5px 1px #00b0f0,
+    -0.5px 0.5px 1px #00b0f0;
+}
+.mismatch {
+    color: #008888;
+    text-shadow: 
+    0.5px 0.5px 1px #0080c0,
+    -0.5px -0.5px 1px #0080c0,
+    0.5px -0.5px 1px #0080c0,
+    -0.5px 0.5px 1px #0080c0;
+}
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.key-row {
+    display: flex;
+    gap: 5px;
+}
+.key {
+    width: 7%; /* キーの幅を固定 */
+    height: 80px; /* キーの高さを自動調整 */
+    border-right: 1px solid #11dfdfd0;
+    border-bottom: 1px solid #11dfdfd0;
+    box-shadow: #00b0f0d0 1px 1px 1px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #11dfdfd0;
+    background-color:#11dfdf10;
+}
+.space {
+    width: 32%; /* Spaceキーの幅を固定 */
+}
+.shift {
+    width: 7%; /* Shiftキーの幅を固定 */
+}
+.key-row:nth-child(1) {
+    margin-left: 0%; /* 1行目を右にずらす */
+}
+.key-row:nth-child(2) {
+    margin-left: 2ch; /* 2行目を右にずらす */
+}
+.key-row:nth-child(3) {
+    margin-left: 4%; /* 3行目右にずらす */
+}
+.key-row:nth-child(4) {
+    margin-left: 0%; /* 4はシフトキーがあるのでずらさない*/
+}
+.key-row:nth-child(5) {
+    margin-left: 32%; /* スペースの位置を調整*/
+}
+
+.highlight {
+    background-color: #88ffffd0; /* 背景色を水色に設定 */
+    color: #ffffff; /* 文字色を白に設定 */
+}
+.missHighlight {
+    background-color: #ff888880; /* 背景色を赤色に設定 */
+    color: #ffffff; /* 文字色を白に設定 */
+}
+
+
+@media (max-width: 768px) {
+    h2 {
+        background-position: -25px;
+        padding-left: 50px;
+        padding-top: 15px
+    }
+    .project{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .project img {
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        max-width: 500px;
+        margin: 0px;
+    }
+    .project .screen {
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        margin: 0px;
+        text-align: left;
+    }
+
+    .Display {
+        padding: 10px;
+        width: 100%;
+        font-size:12px;
+        color:#11dfdf;
+        text-shadow: 
+        0.5px 0.5px 1px #00b0f0,
+        -0.5px -0.5px 1px #00b0f0,
+        0.5px -0.5px 1px #00b0f0,
+        -0.5px 0.5px 1px #00b0f0;
+    }
+
+    .key {
+        width: 7%; /* キーの幅を固定 */
+        height: 40px; /* キーの高さを自動調整 */
+        border-right: 1px solid #11dfdfd0;
+        border-bottom: 1px solid #11dfdfd0;
+        box-shadow: #00b0f0d0 1px 1px 1px;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #11dfdfd0;
+        background-color:#11dfdf10;
+    }
+    .space {
+        width: 32%; /* Spaceキーの幅を固定 */
+    }
+    .shift {
+        width: 7%; /* Shiftキーの幅を固定 */
+    }
+    .key-row:nth-child(1) {
+        margin-left: 0%; /* 1行目を右にずらす */
+    }
+    .key-row:nth-child(2) {
+        margin-left: 1%; /* 2行目を右にずらす */
+    }
+    .key-row:nth-child(3) {
+        margin-left: 2%; /* 3行目右にずらす */
+    }
+    .key-row:nth-child(4) {
+        margin-left: 0%; /* 4はシフトキーがあるのでずらさない*/
+    }
+    .key-row:nth-child(5) {
+        margin-left: 38%; /* スペースの位置を調整*/
+    }
+
+    .highlight {
+        background-color: #88ffffd0; /* 背景色を水色に設定 */
+        color: #ffffff; /* 文字色を白に設定 */
+    }
+    .missHighlight {
+        background-color: #ff888880; /* 背景色を赤色に設定 */
+        color: #ffffff; /* 文字色を白に設定 */
+    }
+}
+
+@media (max-width: 414px){
+    .key{
+        height:20px;
+        font-size:10px;
+    }
+}
