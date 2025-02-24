@@ -10,7 +10,6 @@ body {
     color:#ffffff;
     background-color: #000000;
     background: radial-gradient(ellipse at center, #141550, 66%, #000000);
-    background-size: cover;
     background-attachment: fixed;
     height: 100%;
 }
@@ -324,6 +323,17 @@ footer {
 }
 
 @media (max-width: 414px){
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        color:#ffffff;
+        background-color: #000000;
+        background: radial-gradient(circle at center, #141550, 66%, #000000);
+        background-attachment: fixed;
+        height: 100%;
+    }
     .key{
         height:20px;
         font-size:10px;
