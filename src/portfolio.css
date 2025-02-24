@@ -1,3 +1,21 @@
+/* Webkitブラウザ用（Chrome, Safari） */
+::-webkit-scrollbar {
+    width: 8px; /* スクロールバーの幅 */
+}
+
+::-webkit-scrollbar-track {
+    background: #00000000 /* トラックの色 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #087878; /* スクロールバーの色 */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #11dfdf; /* ホバー時のスクロールバーの色 */
+}
+
 html {
     background-color: #000000;
 }
