@@ -19,16 +19,30 @@
 html {
     background-color: #000000;
 }
-
+.wrapper{
+    padding: 0;
+}
+.wrapper::before{
+    content:"";
+    display:block;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+    width:100%;
+    height:100vh;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background: radial-gradient(ellipse at center, #141550, 66%, #000000);
+}
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color:#ffffff;
-    background-color: #000000;
-    background: radial-gradient(ellipse at center, #141550, 66%, #000000);
-    background-attachment: fixed;
+    background-color: #00000000;
+    background: none;
     height: 100%;
 }
 
@@ -193,7 +207,7 @@ footer {
     -0.5px 0.5px 1px #00b0f0;
 }
 .mismatch {
-    color: #008888;
+    color: #087878;
     text-shadow: 
     0.5px 0.5px 1px #0080c0,
     -0.5px -0.5px 1px #0080c0,
