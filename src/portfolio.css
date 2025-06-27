@@ -54,6 +54,8 @@ header {
         0.5px -0.5px 1px #00b0f0,
         -0.5px 0.5px 1px #00b0f0;
     background: radial-gradient(ellipse at center, #11dfdf80, 10%, #11dfdf00 90%);
+    animation: sf-window 0.3s;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /* SF感を出すためにカットアウトを追加 */
 }
 
 h2 {
@@ -71,36 +73,17 @@ h2 {
         -0.5px 0.5px 1px #00b0f0;
 }
 
-.split-image {
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 のアスペクト比の場合。必要に応じて変更 */
-    background: #00000000; /* 最初は真っ黒に設定 */
-    animation: reveal-center 0.3s ease-in-out forwards;
-    animation-delay: 1s; /* アニメーションの開始を1秒遅らせる */
-}
-
-.split-image.animate {
-    background: url('../img/header.png') center/cover no-repeat;
-}
-
-@keyframes reveal-center {
-    from { 
-        clip-path: inset(50% 0% 50% 0%); 
-    } 
-    to { 
-        clip-path: inset(0% 0% 0% 0%); 
-    }
-}
-
 .scroll-element {
     opacity: 0;
     transform: translateY(100px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    /* transition: opacity 0.6s ease-out, transform 0.6s ease-out; */
 }
 
 .scroll-element.scrolled {
     opacity: 1;
     transform: translateY(0);
+    animation: sf-window 0.3s;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /* SF感を出すためにカットアウトを追加 */
 }
 
 nav ul {
@@ -154,6 +137,61 @@ section {
     display: inline-block;
     margin: 0px;
     text-align: left;
+}
+
+/* アニメーション適用 */
+.project.scrolled img .screen {
+  animation: sf-window 0.3s;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /* SF感を出すためにカットアウトを追加 */
+}
+
+
+/* モザイク＆点滅アニメーション */
+@keyframes sf-window {
+  0% {
+    opacity: 0.1;
+    filter: blur(10px);
+  }
+  10% {
+    opacity: 0.6;
+    filter: blur(5px);
+  }
+  20% {
+    opacity: 0.3;
+    filter: blur(8px);
+  }
+  30% {
+    opacity: 0.8;
+    filter: blur(3px);
+  }
+  40% {
+    opacity: 0.1;
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 0.6;
+    filter: blur(5px);
+  }
+  60% {
+    opacity: 0.3;
+    filter: blur(8px);
+  }
+  70% {
+    opacity: 0.8;
+    filter: blur(3px);
+  }
+  80% {
+    opacity: 0.1;
+    filter: blur(10px);
+  }
+  90% {
+    opacity: 0.6;
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
 }
 
 .holoframeS {
